@@ -1,0 +1,7 @@
+global_var = 18
+def sum_variables(local_var):
+    inner_var = 7
+    result = global_var + local_var + inner_var
+    return result
+result = sum_variables(37)
+print(result)
