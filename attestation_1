@@ -1,0 +1,4 @@
+sortlist = ['Иван', 'Алиса', 'Петр', 'Ольга', 'Евгения', 'Дмитрий', 'Ли',]
+sorted_sortlist = sorted(sortlist, key=lambda x: x.lower())
+for index, sortlist in enumerate(sorted_sortlist, start=1):
+    print(f'{index} {sortlist}')
