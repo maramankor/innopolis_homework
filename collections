@@ -1,0 +1,8 @@
+def flatten_list(nested_list):
+    flattened_list = []
+    for sublist in nested_list:
+        flattened_list.extend(sublist)
+    return flattened_list
+nested_list = [["Ayaka","Ganyu","Eula"],["Ayato","Childe","Furina"],["Bennett","Amber","Diluc"]]
+flattened_list = flatten_list(nested_list)
+print(flattened_list)
