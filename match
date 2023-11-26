@@ -1,0 +1,7 @@
+def match(string):
+    if string == "save":
+        print("сохранить")
+    elif string == "load":
+        print("загрузить")
+    else:
+        print("неизвестная операция")
