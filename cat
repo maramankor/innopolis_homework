@@ -1,0 +1,10 @@
+sentense = input('Введите предложение: ').split()
+count = 0
+for letters in sentense:
+    if letters == 'кот':
+        count += 1
+    if letters == 'Кот':
+        count += 1
+    if letters == 'КОТ':
+        count += 1
+print(f'Слово "кот" встречается в строке {count} раз(а)')
