@@ -1,0 +1,18 @@
+import numpy as np
+import pandas as pd
+from matplotlib import pyplot as plt
+import sklearn
+from sklearn.linear_model import LinearRegression
+cereal_df = pd.read_csv('Downloads/3.1 dataset.csv', sep=',', decimal='.')
+plt.scatter(cereal_df['x'], cereal_df['y'])
+x = np.array(cereal_df['x']).reshape(-1, 1)
+y = np.array(cereal_df['y'])
+x_train = x[:100]
+x_test = x[:100]
+y_train = cereal_df['y'][:100]
+y_test = cereal_df['y'][:100]
+practice_model = LinearRegression()
+practice_model = practice_model.fit(x_train, y_train)
+prediction = practice_model.predict(x_test)
+plt.scatter(x_test, y_test)
+plt.plot(x_test, prediction, color='red')
