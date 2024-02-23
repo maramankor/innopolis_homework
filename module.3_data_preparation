@@ -1,0 +1,9 @@
+import numpy as np
+import pandas as pd
+df = pd.read_csv('Downloads/3.4 dataset.csv', sep=',', decimal='.')
+df['Pet+country'] = df['Pet'] + df['Country']
+df['Mean_age'] = df['Age'].mean()
+from sklearn.cluster import KMeans
+age_model = KMeans(n_clusters=3)
+age_model.fit(df['Age'].to_numpy().reshape(-1,1))
+df['clusters'] = pd.Series(age_model.labels_)
