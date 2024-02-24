@@ -1,0 +1,20 @@
+import numpy as np
+import pandas as pd
+from matplotlib import pyplot as plt
+import sklearn
+from sklearn.ensemble import RandomForestRegressor 
+from sklearn.metrics import roc_auc_score 
+cereal_df = pd.read_csv('Downloads/3.1 dataset.csv', sep=',', decimal='.')
+x = np.array(cereal_df['x']).reshape(-1, 1)
+y = np.array(cereal_df['y'])
+x_train = x[:100]
+x_test = x[:100]
+y_train = cereal_df['y'][:100]
+y_test = cereal_df['y'][:100]
+model =  RandomForestRegressor(n_estimators=10,                              
+                               oob_score=True,
+                               random_state=1) 
+model = model.fit(x_train, y_train)
+prediction = model.predict(x_test)
+plt.scatter(x_test, y_test)
+plt.plot(x_test, prediction, color='red')
